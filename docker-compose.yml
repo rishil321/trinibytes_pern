@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  postgres:
+    container_name: trinibytes_postgres
+    image: 'postgres:14-alpine'
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USERNAME}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - type: volume
+        source: db_data
+        target: /var/lib/postgres/data
+    restart: always
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "postgres" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+  express:
+    container_name: trinibytes_express
+    image: trinibytes_express
+    restart: always
+    build:
+      context: .
+      dockerfile: express/Dockerfile
+      target: base
+    ports:
+      - "${EXPRESS_PORT}:${EXPRESS_PORT}"
+    depends_on:
+      - postgres
+volumes:
+  db_data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: './postgres/db_data'
