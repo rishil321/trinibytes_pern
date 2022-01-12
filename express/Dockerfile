@@ -5,7 +5,7 @@ WORKDIR /app
 # install the required packages
 RUN apt-get update && apt-get install -y cron rsyslog
 # copy crontab which also won't change frequently
-#RUN echo "*/1 * * * * root node /app/express/scripts/checkCaribbeanJobs.js >> /var/log/cron.log 2>&1 \n" >> /etc/crontab
+#RUN echo "*/1 * * * * root node /app/express/scripts/checkCaribbeanJobs.mjs >> /var/log/cron.log 2>&1 \n" >> /etc/crontab
 COPY express/scripts/crontab /etc/cron.d/crontab
 # install the crontab
 RUN touch /var/log/cron.log && chmod 0755 /etc/cron.d/crontab && crontab /etc/cron.d/crontab

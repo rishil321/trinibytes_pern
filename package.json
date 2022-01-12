@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "jest": "^27.4.7",
-    "moment": "^2.29.1"
-  }
-}
