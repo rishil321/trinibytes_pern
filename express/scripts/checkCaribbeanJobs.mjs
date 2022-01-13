@@ -16,10 +16,10 @@ import moment from "moment";
 /*
 Local imports
  */
-import pkg from '../models/caribbeanJobsPost.model'
-const {CaribbeanJobsPost} = pkg;
-
+import db from '../models/index.backup2.js';
+const CaribbeanJobsPost = db.CaribbeanJobsPost;
 /*
+
 Class declarations
 */
 
@@ -33,6 +33,7 @@ Function declarations
  */
 export async function getCaribbeanJobsPostings() {
     try {
+        CaribbeanJobsPost.create();
         const url =
             "https://www.caribbeanjobs.com/ShowResults.aspx?Keywords=&autosuggestEndpoint=%2fautosuggest&Location=124&Category=&Recruiter=Company%2cAgency&btnSubmit=Search&PerPage=100&Page=";
         //set up the http agent to connect

@@ -17,6 +17,7 @@
     "@babel/core": "^7.16.7",
     "@babel/node": "^7.16.8",
     "@babel/register": "^7.16.9",
+    "@prisma/client": "^3.8.0",
     "axios": "^0.24.0",
     "cheerio": "^1.0.0-rc.10",
     "cookie-parser": "~1.4.4",
@@ -33,9 +34,9 @@
     "pg-hstore": "^2.3.4",
     "pug": "^3.0.2",
     "puppeteer": "^13.0.0",
-    "request": "^2.88.2",
     "sequelize": "^6.13.0",
     "sequelize-cli": "^6.3.0",
+    "request": "^2.88.2",
     "winston": "^3.3.3"
   },
   "devDependencies": {

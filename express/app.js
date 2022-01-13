@@ -53,7 +53,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-const db = require("./models/index.js.backup");
+const db = require("./models");
 
 
 module.exports = app;
