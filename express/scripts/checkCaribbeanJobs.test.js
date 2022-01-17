@@ -4,7 +4,7 @@ import {
     getTextContent,
     scrapeFullJobPostData,
     writeLatestCaribbeanJobPostsToDB,
-} from "./checkCaribbeanJobs.mjs";
+} from "./checkCaribbeanJobs.js";
 import "regenerator-runtime/runtime";
 
 test("getCaribbeanJobsPostings", () => {

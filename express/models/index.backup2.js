@@ -54,7 +54,7 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.CaribbeanJobsPost = require("./caribbeanJobsPost.model.js")(sequelize, Sequelize);
+db.CaribbeanJobsPost = require("./caribbeanJobsPost.model.backup.js")(sequelize, Sequelize);
 //enable force true to drop table and recreate
 db.sequelize
     .sync({ force: false, alter: true })

@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const winston = require("winston");
 const { format } = winston;
+
 const cliLogger = winston.createLogger({
   level: "debug",
   format: format.combine(

@@ -10,4 +10,4 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 # |  |  |  |  |
 # *  *  *  *  * user-name command to be executed
 
-#*/10 * * * * node /app/express/scripts/checkCaribbeanJobs.mjs >> /var/log/cron.log 2>&1
+#*/10 * * * * node /app/express/scripts/checkCaribbeanJobs.js >> /var/log/cron.log 2>&1

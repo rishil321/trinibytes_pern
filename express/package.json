@@ -2,11 +2,11 @@
   "name": "trinibytes-express",
   "version": "0.0.1",
   "private": true,
-  "type": "module",
   "scripts": {
     "start": "node --debug ./bin/www",
     "test": "jest",
-    "dev": "nodemon --exec babel-node index.js"
+    "node-dev": "nodemon --exec babel-node index.js",
+    "checkCaribbeanJobs": "babel-node --inspect ./scripts/checkCaribbeanJobs.js"
   },
   "jest": {
     "transform": {
@@ -14,16 +14,14 @@
     }
   },
   "dependencies": {
-    "@babel/core": "^7.16.7",
-    "@babel/node": "^7.16.8",
-    "@babel/register": "^7.16.9",
-    "@prisma/client": "^3.8.0",
+    "@babel/cli": "^7.16.8",
+    "@babel/plugin-proposal-decorators": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
     "axios": "^0.24.0",
     "cheerio": "^1.0.0-rc.10",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
-    "es-main": "^1.0.2",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "https": "^1.0.0",
@@ -34,13 +32,14 @@
     "pg-hstore": "^2.3.4",
     "pug": "^3.0.2",
     "puppeteer": "^13.0.0",
-    "sequelize": "^6.13.0",
-    "sequelize-cli": "^6.3.0",
+    "reflect-metadata": "^0.1.13",
     "request": "^2.88.2",
+    "typeorm": "^0.2.40",
     "winston": "^3.3.3"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.8",
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.8",
     "jest": "^27.4.7",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
